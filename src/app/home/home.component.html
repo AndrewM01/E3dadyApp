@@ -1,0 +1,40 @@
+<div class="container">
+
+  <h3>
+    "Egtma3 E3dady A7san Egtma3"
+  </h3>
+  <div class="head">
+    <span class="greetings">
+      <h4>Welcome {{this.name}}  :) </h4>
+    </span>
+    <span class="score">
+      <p>Score: {{this.score}}</p> <img src="./assets/coins.png">
+    </span>
+  </div>
+  <div class="btns">
+
+    <button mat-raised-button color="warn" (click)="openConfirmationDialog('this will cost you 3 ')" (click)="SelectActivity('tasme3')">Tasme3</button>
+    <button mat-raised-button color="primary" (click)="openConfirmationDialog('this will cost you 4 ')" (click)="SelectActivity('quizzes')">Quizzes</button>
+    <button mat-raised-button color="accent" (click)="openConfirmationDialog('this will cost you 5 ')" (click)="SelectActivity('content')">Content</button>
+    <button mat-raised-button id="btn1" (click)="openConfirmationDialog('this will cost you 2 ')" (click)="SelectActivity('content')">Home Work :(</button>
+  </div>
+  <div class="content" [ngSwitch]="SelectedBtn" *ngIf="content">
+    <div *ngSwitchCase="'tasme3'">
+      <section class="example-section" *ngFor="let aya of ListOfAyat">
+        <mat-checkbox class="example-margin" [(ngModel)]="aya.checked">{{aya.verse}}</mat-checkbox>
+      </section>
+    </div>
+    <div *ngSwitchCase="'quizzes'">
+      <section *ngFor="let quiz of ListOfQuizzes">
+         <a href="{{quiz.link}}" target="_blank">{{quiz.name}}</a>
+
+      </section>
+    </div>
+    <div *ngSwitchCase="'content'">
+      <section  *ngFor="let lec of ListOfLecs">
+        <button (click)="navigateToGoogle(lec.link)" >{{lec.name}}</button>
+
+      </section>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+.container{
+  margin: 10px;
+  display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 90%;
+}
+::ng-deep .mdc-form-field label{
+  margin: 5px;
+
+  font-weight: bold;
+}
+
+
+.head{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin: auto;
+}
+h3{
+  text-align: center;
+}
+
+.btns{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  gap: 10px;
+}
+.score{
+  margin: auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3px;
+    padding: 3px;
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: rgb(220, 218, 218);
+
+
+   P{
+    margin: 5px;
+    font-weight: bold;
+   }
+
+  img{
+    position: relative;
+
+    top: 3px;
+    width: 20px;
+    height: 20px;
+  }
+}
+.greetings{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+
+}
+
+.content{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  section{
+    margin: 10px;
+
+  }
+}
+
+a{
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  &:hover{
+    color: red;
+  }
+}
+#btn1 {
+  --mdc-protected-button-container-color: #0a4dbd;
+  --mdc-protected-button-label-text-color: #fffcfc;
+}

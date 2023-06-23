@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="header">
+
+    <h3>"Egtma3 E3dady A7san Egtma3"</h3>
+  <mat-form-field color="warn">
+    <mat-label color="warn">Shabab</mat-label>
+    <mat-select color="warn" [(ngModel)]="selectedValue" name="shab">
+      <mat-option>None</mat-option>
+      <mat-option (click)="getScore()" (click)="this.attendance=false" *ngFor="let shab of accounts" [value]="shab.name">
+        {{shab.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p *ngIf="selectedValue"> Score : <span>{{selectedValueScore}}</span> <img  src="./assets/coins.png"></p>
+</div>
+  <div class="body">
+
+    <button  mat-raised-button color="primary" [disabled]="attendance"
+      (click)="AddingScore('attendance')">Attendance</button>
+      <button mat-raised-button id="btn2"
+      (click)="AddingScore('interactive')">Interactive</button>
+      <button mat-raised-button id="btn6" (click)="AddingScore('tasme3')" color="primary">Tasme3</button>
+    <button mat-raised-button id="btn4" (click)="AddingScore('bouns')">Bouns</button>
+    <button mat-raised-button color="warn" (click)="AddingScore('removePoint')">Remove</button>
+  </div>
+  <div class="summation" [ngSwitch]="selectedSum" *ngIf="rem">
+    <div  class="bouns" *ngSwitchCase="'sum'" >
+      <mat-form-field color="warn" class="example-full-width">
+        <mat-label>Score</mat-label>
+        <input matInput [(ngModel)]="addedScore">
+      </mat-form-field>
+      <button mat-raised-button id="btn4" (click)="AddingScore('add')">Add</button>
+    </div>
+    <div class="bouns" *ngSwitchCase="'minus'">
+      <mat-form-field  class="example-full-width">
+        <mat-label>Score</mat-label>
+        <input matInput [(ngModel)]="RemovedScore">
+      </mat-form-field>
+      <button mat-raised-button color="warn"  (click)="AddingScore('remove')">Remove</button>
+    </div>
+    <div class="bouns" *ngSwitchCase="'tasme3'">
+      <mat-form-field  class="example-full-width">
+        <mat-label>Verse</mat-label>
+        <input matInput [(ngModel)]="Verse">
+      </mat-form-field>
+      <mat-form-field  class="example-full-width">
+        <mat-label>Points</mat-label>
+        <input matInput [(ngModel)]="points">
+      </mat-form-field>
+      <button mat-raised-button id="btn6"  (click)="AddingScore('sama3')">Sma3</button>
+    </div>
+  </div>
+</div>

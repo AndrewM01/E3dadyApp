@@ -1,0 +1,56 @@
+<mat-sidenav-container fullscreen >
+  <div class="cont">
+
+    <div class="example-sidenav-content" *ngIf="open">
+
+
+      <button style="margin: 10px;" mat-mini-fab color="warn" (click)="tog()" (click)="sidenav.toggle()"
+        aria-label="Example icon button with a menu icon" *ngIf="this.authService.isLoggedIn">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    </div>
+
+  </div>
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" style="width: 90px;" opened="false" >
+
+
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-mini-fab (click)="tog()" (click)="sidenav.toggle()" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/home']" routerLinkActive="active">
+
+
+        <h5 class="lead"><mat-icon>home</mat-icon></h5>
+
+      </mat-list-item>
+      <mat-list-item [routerLink]="['/admin']" routerLinkActive="active">
+
+
+        <h5><mat-icon>settings</mat-icon></h5>
+
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="['/shab']" routerLinkActive="active">
+        <h5 class="lead"><mat-icon>account_circle</mat-icon></h5>
+      </mat-list-item>
+
+
+      <mat-list-item [routerLink]="['/settings']" routerLinkActive="active">
+        <h5 class="lead"><mat-icon>build</mat-icon></h5>
+      </mat-list-item>
+
+
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <div class="content">
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-sidenav-container>

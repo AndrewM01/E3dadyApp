@@ -1,0 +1,16 @@
+
+.cont{
+  height: inherit;
+  overflow: scroll;
+}
+
+.table{
+  height: 400px;
+  overflow: scroll;
+}
+th{
+  height: 50px; /* Set a desired height for the table header */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
